@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import MonitorsService from "./../../API/MonitorsService";
 import { useFetching } from "./../hooks/useFetching";
 import Error from './../Error/Error';

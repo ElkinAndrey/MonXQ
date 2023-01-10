@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 
 const URL = "https://localhost:44302/api";
