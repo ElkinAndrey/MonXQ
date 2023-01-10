@@ -54,7 +54,10 @@ export default class MonitorsService {
   static async getMonitor(id) {
     // const response = await axios.get(`${URL}/Monitors/${id}`);
     // return response.data;
-
-    return Monitors[id];
+    for (let monitor of Monitors) {
+      if (monitor.id.toString() === id.toString()){
+        return monitor;
+      }
+    }
   }
 }
