@@ -37,7 +37,7 @@ const Monitors = () => {
               {/* Данные */}
               <div>
                 {monitors.map((monitor) => (
-                  <div>
+                  <div key={monitor.id}>
                     <div>{monitor.id}</div>
                     <div>{monitor.name}</div>
                     <div>{monitor.price}</div>

@@ -59,5 +59,6 @@ export default class MonitorsService {
         return monitor;
       }
     }
+    throw new Error("monitorNotFound")
   }
 }
