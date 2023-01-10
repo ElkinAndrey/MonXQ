@@ -8,10 +8,18 @@ const MonitorsHeader = () => {
     // Get the scroll position
     let scrollPos = window.pageYOffset;
 
-    if (scrollPos > 100) {
-      header.style.backgroundColor = "#141f2b";
+    if (header=== null){
+      return;
+    }
+
+    if (scrollPos <= 100) {
+      if (header.classList.contains(classes.background)) {
+        header.classList.remove(classes.background);
+      }
     } else {
-      header.style.backgroundColor = "rgba(255, 255, 255, 0)";
+      if (!header.classList.contains(classes.background)) {
+        header.classList.add(classes.background);
+      }
     }
   });
 
