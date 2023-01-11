@@ -1,32 +1,32 @@
 import React from "react";
-import { useState } from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
 import classes from "./MonitorsList.module.css";
-import MonitorsService from "./../../../API/MonitorsService";
-import { useFetching } from "../../../hooks/useFetching";
 import MonitorFromList from "../MonitorFromList/MonitorFromList";
+import Input from "./../../Input/Input";
 
-const MonitorsList = () => {
-  const dataFetchedRef = useRef(false);
-  const [monitors, setMonitors] = useState([]);
-
-  const [fetchMonitor, isMonitorLoading, monitorError] = useFetching(
-    async () => {
-      const data = await MonitorsService.getMonitors();
-      setMonitors(data);
-    }
-  );
-
-  useEffect(() => {
-    if (dataFetchedRef.current) return;
-    dataFetchedRef.current = true;
-    fetchMonitor();
-  }, []);
-
+const MonitorsList = ({
+  monitors,
+  isMonitorLoading,
+  monitorError,
+  searchQuery,
+  setSearchQuery,
+}) => {
   return (
-    <div>
-      <div className={classes.name}>Мониторы</div>
+    <div id="monitors">
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div className={classes.name}>Мониторы</div>
+        <Input
+          style={{ marginLeft: "30px" }}
+          placeholder="Найти монитор"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
       <div>
         {/* Ошибка */}
         {monitorError ? (
@@ -42,7 +42,7 @@ const MonitorsList = () => {
                 <div className={classes.monitors}>
                   {monitors.map((monitor) => (
                     <div key={monitor._id}>
-                      <MonitorFromList monitor={monitor}/>
+                      <MonitorFromList monitor={monitor} />
                     </div>
                   ))}
                 </div>

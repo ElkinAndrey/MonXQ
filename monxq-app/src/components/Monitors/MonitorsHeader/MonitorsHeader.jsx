@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./MonitorsHeader.module.css";
 
-const MonitorsHeader = () => {
+const MonitorsHeader = ({ searchQuery, setSearchQuery }) => {
   document.addEventListener("scroll", function () {
     // Get the scroll position
     let scrollPos = window.pageYOffset;
