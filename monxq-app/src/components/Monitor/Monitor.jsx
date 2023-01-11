@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import MonitorsService from "./../../API/MonitorsService";
 import { useFetching } from "./../hooks/useFetching";
 import Error from "./../Error/Error";
-import Header from "./Header/Header";
+import Header from "../Header/Header";
 import classes from "./Monitor.module.css";
 import Characteristics from "./Characteristics/Characteristics";
 

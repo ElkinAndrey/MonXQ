@@ -1,0 +1,13 @@
+.info {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.info div {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
