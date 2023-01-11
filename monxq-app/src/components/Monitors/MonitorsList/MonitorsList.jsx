@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import classes from "./MonitorsList.module.css";
 import MonitorsService from "./../../../API/MonitorsService";
-import { useFetching } from "./../../hooks/useFetching";
+import { useFetching } from "../../../hooks/useFetching";
 import MonitorFromList from "../MonitorFromList/MonitorFromList";
 
 const MonitorsList = () => {
