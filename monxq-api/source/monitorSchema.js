@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const monitorSchema = new mongoose.Schema({
-      id: {type: Number, requared: true},
       name: {type: String, requared: true},
       price: {type: Number, requared: true},
       description: {type: String, requared: true},
@@ -16,6 +15,6 @@ const monitorSchema = new mongoose.Schema({
             pixelDensity: {type: String, requared: true},
             screenRefreshRate: {type: String, requared: true}
       }
-});
+},  {collection: 'monitors'});
 module.exports = mongoose.model('monitor', monitorSchema);
 return mongoose.model('monitor', monitorSchema);
