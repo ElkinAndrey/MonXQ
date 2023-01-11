@@ -3,12 +3,18 @@ import classes from "./MonitorFromList.module.css";
 
 const MonitorFromList = ({ monitor }) => {
   return (
-    <div className={classes.body}>
-      <div>{monitor._id}</div>
-      <div>{monitor.name}</div>
-      <div>{monitor.price}</div>
-      <div>{monitor.description}</div>
-    </div>
+    <button className={classes.body}>
+      <img
+        src={`./img/${monitor._id}.png`}
+        alt={""}
+        className={classes.image}
+      />
+      <div className={classes.name}>{monitor.name}</div>
+      <div className={classes.price}>{monitor.price}</div>
+      <div className={classes.description}>
+        {monitor.description + monitor.description + monitor.description}
+      </div>
+    </button>
   );
 };
 
