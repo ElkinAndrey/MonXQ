@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import MonitorsService from "./../../API/MonitorsService";
 import { useFetching } from "./../hooks/useFetching";
-import Error from './../Error/Error';
+import Error from "./../Error/Error";
 
 const Monitor = () => {
   const dataFetchedRef = useRef(false);
@@ -22,8 +22,8 @@ const Monitor = () => {
     fetchMonitor(params.id);
   }, []);
 
-  if (monitorError === "monitorNotFound") {
-    return <Error/>;
+  if (monitorError === "Request failed with status code 500") {
+    return <Error />;
   }
 
   return (
@@ -39,7 +39,7 @@ const Monitor = () => {
           ) : (
             <div>
               {/* Данные */}
-              <div>{monitor.id}</div>
+              <div>{monitor._id}</div>
               <div>{monitor.name}</div>
               <div>{monitor.price}</div>
               <div>{monitor.description}</div>

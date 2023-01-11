@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://localhost:44302/api";
+const URL = "http://localhost:5000/api";
 
 const Monitors = [
   {
@@ -45,19 +45,13 @@ const Monitors = [
 
 export default class MonitorsService {
   static async getMonitors() {
-    // const response = await axios.get(`${URL}/Monitors/`);
-    // return response.data;
-    return Monitors
+    const response = await axios.get(`${URL}/monitors/`);
+    return response.data;
   }
 
   static async getMonitor(id) {
-    // const response = await axios.get(`${URL}/Monitors/${id}`);
-    // return response.data;
-    for (let monitor of Monitors) {
-      if (monitor.id.toString() === id.toString()){
-        return monitor;
-      }
-    }
-    throw new Error("monitorNotFound")
+    const response = await axios.get(`${URL}/monitor/${id}`);
+    return response.data[0];
+    // throw new Error("monitorNotFound");
   }
 }
