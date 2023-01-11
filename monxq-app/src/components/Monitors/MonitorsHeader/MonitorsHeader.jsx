@@ -2,17 +2,14 @@ import React from "react";
 import classes from "./MonitorsHeader.module.css";
 
 const MonitorsHeader = () => {
-  let header = document.getElementsByClassName(classes.body).item(0);
+  
 
   document.addEventListener("scroll", function () {
     // Get the scroll position
     let scrollPos = window.pageYOffset;
+    let header = document.getElementsByClassName(classes.body).item(0);
 
-    if (header=== null){
-      return;
-    }
-
-    if (scrollPos <= 100) {
+    if (scrollPos<= 100) {
       if (header.classList.contains(classes.background)) {
         header.classList.remove(classes.background);
       }

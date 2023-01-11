@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import classes from "./MonitorsList.module.css";
 import MonitorsService from "./../../../API/MonitorsService";
 import { useFetching } from "./../../hooks/useFetching";
+import MonitorFromList from "../MonitorFromList/MonitorFromList";
 
 const MonitorsList = () => {
   const dataFetchedRef = useRef(false);
@@ -25,7 +26,7 @@ const MonitorsList = () => {
 
   return (
     <div>
-      <div>Мониторы</div>
+      <div className={classes.name}>Мониторы</div>
       <div>
         {/* Ошибка */}
         {monitorError ? (
@@ -38,13 +39,10 @@ const MonitorsList = () => {
             ) : (
               <div>
                 {/* Данные */}
-                <div>
+                <div className={classes.monitors}>
                   {monitors.map((monitor) => (
                     <div key={monitor._id}>
-                      <div>{monitor._id}</div>
-                      <div>{monitor.name}</div>
-                      <div>{monitor.price}</div>
-                      <div>{monitor.description}</div>
+                      <MonitorFromList monitor={monitor}/>
                     </div>
                   ))}
                 </div>
