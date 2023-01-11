@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import MonitorsService from "./../../API/MonitorsService";
 import { useFetching } from "./../hooks/useFetching";
 import Error from "./../Error/Error";
+import Header from "./Header/Header";
+import classes from "./Monitor.module.css";
+import Characteristics from "./Characteristics/Characteristics";
 
 const Monitor = () => {
   const dataFetchedRef = useRef(false);
@@ -28,25 +31,19 @@ const Monitor = () => {
 
   return (
     <div>
-      {/* Ошибка */}
-      {monitorError ? (
-        <div>Не удалось получить доступ к серверу</div>
-      ) : (
-        <div>
-          {/* Загрузка */}
-          {isMonitorLoading ? (
-            <div>Загрузка...</div>
-          ) : (
-            <div>
-              {/* Данные */}
-              <div>{monitor._id}</div>
-              <div>{monitor.name}</div>
-              <div>{monitor.price}</div>
-              <div>{monitor.description}</div>
-            </div>
-          )}
-        </div>
-      )}
+      <Header />
+      <div className={classes.monitor}>
+        <img
+          src={`/img/${monitor._id}.png`}
+          alt={""}
+          className={classes.image}
+        />
+        <Characteristics
+          monitor={monitor}
+          monitorError={monitorError}
+          isMonitorLoading={isMonitorLoading}
+        />
+      </div>
     </div>
   );
 };

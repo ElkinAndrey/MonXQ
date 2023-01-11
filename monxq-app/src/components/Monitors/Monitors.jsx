@@ -1,7 +1,7 @@
 import React from "react";
 import MonitorsHeader from "./MonitorsHeader/MonitorsHeader";
 import Welcome from "./Welcome/Welcome";
-import MonitorsList from './MonitorsList/MonitorsList';
+import MonitorsList from "./MonitorsList/MonitorsList";
 
 const Monitors = () => {
   return (

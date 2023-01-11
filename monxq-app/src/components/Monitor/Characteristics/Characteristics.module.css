@@ -1,0 +1,23 @@
+.body {
+    width: 500px;
+    margin: 30px 00px;
+}
+
+.name {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.characteristics {    
+    font-size: 24px;
+}
